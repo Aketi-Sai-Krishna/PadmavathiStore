@@ -15,3 +15,11 @@ export const brands = [
   { name: "Haldiram's", style: "brand-haldirams" },
   { name: "Bingo!", style: "brand-bingo" },
 ];
+
+
+// Brands with product catalogues currently represented in the website.
+// Add a new catalogue brand here when its product catalogue is added.
+export const catalogueBrands = [
+  { id: "neo", name: "NEO" },
+  { id: "pepe", name: "PEPE" },
+];

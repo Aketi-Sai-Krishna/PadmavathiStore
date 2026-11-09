@@ -1,18 +1,12 @@
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
-import { makeWhatsAppLink } from "../utils/whatsapp.js";
 
 export default function CategoryCard({ category, index }) {
-  const message = `Hello Padmavathi Stores! I would like to enquire about ${category.title}. Please share wholesale availability, pricing and minimum order quantities.`;
   return (
-    <button
+    <a
       className={`category-card category-${category.tone} reveal`}
       style={{ "--delay": `${(index % 4) * 70}ms` }}
-      type="button"
-      onClick={() => {
-        const url = makeWhatsAppLink(message);
-        if (url) window.open(url, "_blank", "noopener,noreferrer");
-      }}
-      aria-label={`Enquire about ${category.title}`}
+      href={`/category/${category.slug}`}
+      aria-label={`Explore ${category.title} products`}
     >
       <div className="category-photo">
         <img
@@ -35,6 +29,6 @@ export default function CategoryCard({ category, index }) {
         <ArrowDownRight className="category-arrow" size={23} />
         <p>{category.description}</p>
       </div>
-    </button>
+    </a>
   );
 }
